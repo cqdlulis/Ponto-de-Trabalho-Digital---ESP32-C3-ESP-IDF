@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "Raul Guedert",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -156.6, "left": -227.6, "attrs": {} },
+    {
+      "type": "board-aitewinrobot-esp32c3-supermini",
+      "id": "esp",
+      "top": -94.17,
+      "left": -162.94,
+      "rotate": 270,
+      "attrs": { "builder": "esp-idf", "cpuFrequency": "16" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -462.8,
+      "left": -445.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -310.4,
+      "left": 15.2,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:0", "keypad1:R1", "green", [ "v-9.6", "h-220.8" ] ],
+    [ "esp:1", "keypad1:R2", "green", [ "v-19.2", "h-239.6" ] ],
+    [ "esp:2", "keypad1:R3", "green", [ "v-28.8", "h-220.8" ] ],
+    [ "esp:3", "keypad1:R4", "green", [ "v-38.4", "h-201.6" ] ],
+    [ "esp:4", "keypad1:C1", "green", [ "v-48", "h-182.4" ] ],
+    [ "esp:5", "keypad1:C2", "green", [ "v9.6", "h-144" ] ],
+    [ "esp:6", "keypad1:C3", "green", [ "v19.2", "h-153.6" ] ],
+    [ "esp:7", "keypad1:C4", "green", [ "v28.8", "h-144" ] ],
+    [ "esp:8", "lcd1:SDA", "green", [ "v9.6", "h86.4", "v-249.8" ] ],
+    [ "esp:9", "lcd1:SCL", "green", [ "v19.2", "h86.4", "v-249.9" ] ],
+    [ "esp:GND", "lcd1:GND", "black", [ "v0" ] ],
+    [ "esp:5V", "lcd1:VCC", "red", [ "v0" ] ],
+    [ "esp:0", "bb1:12t.d", "", [ "$bb" ] ],
+    [ "esp:1", "bb1:11t.d", "", [ "$bb" ] ],
+    [ "esp:2", "bb1:10t.d", "", [ "$bb" ] ],
+    [ "esp:3", "bb1:9t.d", "", [ "$bb" ] ],
+    [ "esp:4", "bb1:8t.d", "", [ "$bb" ] ],
+    [ "esp:5", "bb1:5b.h", "", [ "$bb" ] ],
+    [ "esp:6", "bb1:6b.h", "", [ "$bb" ] ],
+    [ "esp:7", "bb1:7b.h", "", [ "$bb" ] ],
+    [ "esp:8", "bb1:8b.h", "", [ "$bb" ] ],
+    [ "esp:9", "bb1:9b.h", "", [ "$bb" ] ],
+    [ "esp:10", "bb1:10b.h", "", [ "$bb" ] ],
+    [ "esp:5V", "bb1:5t.d", "", [ "$bb" ] ],
+    [ "esp:GND", "bb1:6t.d", "", [ "$bb" ] ],
+    [ "esp:3V3", "bb1:7t.d", "", [ "$bb" ] ],
+    [ "esp:RX", "bb1:11b.h", "", [ "$bb" ] ],
+    [ "esp:TX", "bb1:12b.h", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
